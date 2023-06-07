@@ -2,12 +2,12 @@
 
 function db() {
 
-    $servername = "localhost";
+    $servername = "database";
     $username = "root";
     $password = "password";
     
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, 'qagenda-controle-clientes');
+    $conn = mysqli_connect($servername, $username, $password, 'qagenda_controle_clientes');
     
     // Check connection
     if (!$conn) 
