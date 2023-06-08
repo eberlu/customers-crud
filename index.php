@@ -10,7 +10,7 @@
     
     <div class="container my-5 d-flex flex-column gap-4">
 
-        <h1>Cadastro de clientes QAgenda</h1>
+        <h1>Cadastro de clientes</h1>
 
         <a class="btn btn-outline-primary" href="create.php">Novo cliente</a>
 

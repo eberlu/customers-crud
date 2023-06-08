@@ -1,7 +1,3 @@
-CREATE DATABASE IF NOT EXISTS qagenda_controle_clientes;
-
-use qagenda_controle_clientes;
-
 CREATE TABLE IF NOT EXISTS customers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(45) NOT NULL UNIQUE,

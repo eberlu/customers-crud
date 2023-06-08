@@ -9,13 +9,18 @@ services:
       - ./:/var/www/html
     ports:
       - 3000:80
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
   
   database:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: qagenda_controle_clientes
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
     volumes:
       - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql

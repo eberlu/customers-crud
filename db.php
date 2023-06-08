@@ -2,12 +2,13 @@
 
 function db() {
 
-    $servername = "database";
-    $username = "root";
-    $password = "password";
+    $DB_HOST = getenv('DB_HOST', true);
+    $DB_NAME = getenv('DB_NAME', true);
+    $DB_USER = getenv('DB_USER', true);
+    $DB_PASSWORD  = getenv('DB_PASSWORD', true);
     
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, 'qagenda_controle_clientes');
+    $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME);
     
     // Check connection
     if (!$conn) 
