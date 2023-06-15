@@ -18,9 +18,19 @@
 
         <h1>Cadastro de clientes</h1>
 
-        <div class="d-flex gap-5 items-center">
+        <div class="d-flex gap-2 items-center">
             <a class="btn btn-outline-primary" href="create.php">Novo cliente</a>
+            <a class="btn btn-outline-secondary" href="index.php">Recarregar</a>
         </div>
+
+        <?php
+
+            if(!empty($_GET['message'])) {
+                $message = $_GET['message'];
+                echo "<div class='alert alert-primary alert-dismissible fade show'>$message</div>";
+            }
+
+        ?>
 
         <table class="table table-striped table-hover">
 
@@ -67,5 +77,7 @@
     </table>   
 
     </div>
+    
+
 
 <?php include 'partials/footer.php' ?>
