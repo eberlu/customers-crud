@@ -6,7 +6,11 @@
 
     include 'partials/header.php';
 
-    $customers = db()->query("SELECT * FROM customers WHERE created_at ORDER BY created_at");
+    $conn = db();
+
+    $customers = $conn->query("SELECT * FROM customers WHERE created_at ORDER BY created_at");
+
+    $conn->close();
     
 ?>
     
