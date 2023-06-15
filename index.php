@@ -2,9 +2,11 @@
 
     require_once 'db.php';
 
+	require_once 'dateOnTimezone.php';
+
     include 'partials/header.php';
 
-    $customers = db()->query("SELECT * FROM customers ORDER BY created_at");
+    $customers = db()->query("SELECT * FROM customers WHERE created_at ORDER BY created_at");
     
 ?>
     
@@ -12,7 +14,9 @@
 
         <h1>Cadastro de clientes</h1>
 
-        <a class="btn btn-outline-primary" href="create.php">Novo cliente</a>
+        <div class="d-flex gap-5 items-center">
+            <a class="btn btn-outline-primary" href="create.php">Novo cliente</a>
+        </div>
 
         <table class="table table-striped table-hover">
 
@@ -44,8 +48,8 @@
                     <td><?= $customer->id ?></td>
                     <td><?= $customer->name ?></td>
                     <td><?= $customer->whatsapp ?></td>
-                    <td><?= $customer->created_at ?></td>
-                    <td><?= $customer->updated_at ?></td>
+                    <td><?= dateOnTimezone($customer->created_at) ?></td>
+                    <td><?= dateOnTimezone($customer->updated_at) ?></td>
                     <td>
                         <?= "<a class='btn btn-primary' href='detail.php?id={$customer->id}'>Detalhes</a>" ?>
                     </td>
