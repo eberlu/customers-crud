@@ -2,7 +2,7 @@
 
     require_once 'db.php';
 
-	require_once 'dateOnTimezone.php';
+	require_once 'formatDate.php';
 
     include 'partials/header.php';
 
@@ -48,8 +48,8 @@
                     <td><?= $customer->id ?></td>
                     <td><?= $customer->name ?></td>
                     <td><?= $customer->whatsapp ?></td>
-                    <td><?= dateOnTimezone($customer->created_at) ?></td>
-                    <td><?= dateOnTimezone($customer->updated_at) ?></td>
+                    <td><?= formatDate($customer->created_at) ?></td>
+                    <td><?= formatDate($customer->updated_at) ?></td>
                     <td>
                         <?= "<a class='btn btn-primary' href='detail.php?id={$customer->id}'>Detalhes</a>" ?>
                     </td>
